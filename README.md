@@ -1,24 +1,24 @@
-# FindIt - Lost and Found Portal 🌟
+# FindIt - Lost and Found Portal
 
 A cute and community-driven Lost and Found portal built with the MERN stack. Help reunite items with their owners through a simple, light-mode interface and real-time messaging.
 
-## ✨ Features
+## Features
 
 - **Cute & Simple UI**: built with Tailwind CSS v4, featuring a "Sakura & Sky" pastel palette, rounded UI elements, and glassmorphism.
 - **Community Board**: Browse lost/found items with category filters and search.
 - **Item Posting**: Multi-part form for uploading item details and photos (integrated with Cloudinary).
 - **Real-time Chat**: Bi-directional messaging powered by Socket.io for safe and quick coordination.
 - **Secure Auth**: JWT-based user accounts with persistent sessions.
-- **Status Tracking**: Ability for owners to mark items as "Resolved ✨" once claimed.
+- **Status Tracking**: Ability for owners to mark items as "Resolved" once claimed.
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - **Frontend**: React (Vite), Tailwind CSS v4, Lucide Icons
 - **Backend**: Node.js, Express, Socket.io
 - **Database**: MongoDB (Mongoose)
 - **Image Storage**: Cloudinary API
 
-## 📸 Screenshots
+## Screenshots
 
 ![Home Page](docs/screenshots/home.png)
 ![Dashboard](docs/screenshots/dashboard.png)
@@ -26,7 +26,7 @@ A cute and community-driven Lost and Found portal built with the MERN stack. Hel
 ![Chat Interface](docs/screenshots/chat.png)
 ![Login](docs/screenshots/login.png)
 
-## 🛠️ Installation
+## Installation
 
 1. **Clone the repository**:
    ```bash
@@ -58,6 +58,6 @@ A cute and community-driven Lost and Found portal built with the MERN stack. Hel
    - Start Backend: `cd backend && npm run start`
    - Start Frontend: `cd frontend && npm run dev`
 
-## 💖 Credits
+## Credits
 
 Built with love for the 6th Semester Lab Project.
