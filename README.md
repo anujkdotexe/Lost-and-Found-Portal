@@ -4,18 +4,19 @@ A cute and community-driven Lost and Found portal built with the MERN stack. Hel
 
 ## ✨ Features
 
-- **Cute & Simple UI**: Built with Tailwind CSS v4 and a pastel aesthetic.
+- **Cute & Simple UI**: built with Tailwind CSS v4, featuring a "Sakura & Sky" pastel palette, rounded UI elements, and glassmorphism.
 - **Community Board**: Browse lost/found items with category filters and search.
-- **Item Posting**: Upload details and photos (integrated with Cloudinary).
-- **Real-time Chat**: Bi-directional messaging powered by Socket.io.
-- **Secure Auth**: JWT-based user accounts.
+- **Item Posting**: Multi-part form for uploading item details and photos (integrated with Cloudinary).
+- **Real-time Chat**: Bi-directional messaging powered by Socket.io for safe and quick coordination.
+- **Secure Auth**: JWT-based user accounts with persistent sessions.
+- **Status Tracking**: Ability for owners to mark items as "Resolved ✨" once claimed.
 
 ## 🚀 Tech Stack
 
-- **Frontend**: React, Vite, Tailwind CSS v4, Lucide React
+- **Frontend**: React (Vite), Tailwind CSS v4, Lucide Icons
 - **Backend**: Node.js, Express, Socket.io
 - **Database**: MongoDB (Mongoose)
-- **Image Storage**: Cloudinary
+- **Image Storage**: Cloudinary API
 
 ## 📸 Screenshots
 
