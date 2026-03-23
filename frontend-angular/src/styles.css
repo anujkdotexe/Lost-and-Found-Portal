@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Font: Nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+  /* Cute Pastel Palette */
+  --color-primary: #ff8fa3;   /* Cotton Candy Pink */
+  --color-primary-hover: #ff748c;
+  --color-primary-light: #ffd6e0;
+  
+  --color-secondary: #a0c4ff; /* Soft Pastel Blue */
+  --color-secondary-hover: #8bb5f8;
+  --color-secondary-light: #dbe7ff;
+
+  --color-accent-mint: #9bf6ff; /* Mint Green */
+  --color-accent-mint-light: #e0fbfc;
+
+  --color-accent-yellow: #fdffb6; /* Sunny Yellow */
+  --color-accent-yellow-light: #fffffc;
+
+  --color-accent-peach: #ffcda3; /* Found Peach */
+  --color-accent-peach-light: #fff6ee;
+  
+  --color-background: #fffafa; /* Very light creamy pink for overall app */
+  --color-surface: #ffffff;
+  
+  --color-text-main: #4a4e69; /* Soft dark purple/grey for text instead of harsh black */
+  --color-text-muted: #9ca3af;
+  --color-border: #f3f4f6;
+  
+  /* Bubbly/Soft Clay Shadows */
+  --shadow-subtle: 0 8px 24px -4px rgba(255, 143, 163, 0.08); /* Pinkish tint to shadow */
+  --shadow-bubbly: 0 12px 30px -8px rgba(160, 196, 255, 0.25), 0 4px 10px -4px rgba(160, 196, 255, 0.15); /* Blueish bouncing shadow */
+  --shadow-pressed: 0 2px 5px -1px rgba(0, 0, 0, 0.05);
+  
+  /* Aggressively Rounded Corners */
+  --radius-xl: 32px;
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-light);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800; /* Extra bold for headings in Nunito looks fantastic */
+  color: #2b2d42; /* Deeper color for headings */
+  letter-spacing: -0.02em;
+}
+
+/* Layout Utilities (Keeping Tailwind-esque names for compatibility) */
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+@media (min-width: 640px) { .container { max-width: 640px; } }
+@media (min-width: 768px) { .container { max-width: 768px; } }
+@media (min-width: 1024px) { .container { max-width: 1024px; } }
+
+/* Flex/Grid Basics */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 0.5rem; }
+.gap-3 { gap: 0.75rem; }
+.gap-4 { gap: 1rem; }
+.gap-6 { gap: 1.5rem; }
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+@media (min-width: 768px) { 
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } 
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } 
+}
+
+/* Design Utilities: The "Soft-Clay / Bubbly" Aesthetic */
+
+/* Base container representing a soft card */
+.bubbly-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-subtle);
+  border: 2px solid white; /* Gives a slight 3D edge when on slightly colored background */
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); /* Spring physics transition */
+}
+.bubbly-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: var(--shadow-bubbly);
+  border-color: var(--color-primary-light);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, #ff6b8b 100%);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -6px rgba(255, 143, 163, 0.6);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px -6px rgba(255, 143, 163, 0.8);
+}
+.btn-primary:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--shadow-pressed);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #7ca1f9 100%);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px -6px rgba(160, 196, 255, 0.6);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-secondary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 25px -6px rgba(160, 196, 255, 0.8);
+}
+.btn-secondary:active {
+  transform: translateY(2px) scale(0.98);
+  box-shadow: var(--shadow-pressed);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text-main);
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 1.1rem;
+  border: 3px solid var(--color-primary-light);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-outline:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(255, 143, 163, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Input Fields - soft and rounded */
+.input-bubbly {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background-color: #f8fafc;
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+}
+.input-bubbly::placeholder {
+  color: #a1a1aa;
+  font-weight: 500;
+}
+.input-bubbly:focus {
+  outline: none;
+  background-color: white;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px var(--color-primary-light);
+}
+
+/* Frosted Glass Floating Navbar Tool */
+.floating-glass-nav {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-full);
+  box-shadow: 0 10px 40px -10px rgba(255, 143, 163, 0.2), 0 4px 10px -4px rgba(160, 196, 255, 0.15);
+}
+
+/* Badges */
+.badge-lost {
+  background-color: #fff1f2;
+  color: #fb7185;
+  border: 2px solid #fda4af;
+  padding: 0.25rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+}
+.badge-found {
+  background-color: #f0fdf4;
+  color: #4ade80;
+  border: 2px solid #86efac;
+  padding: 0.25rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 800;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob {
+  animation: blob 7s infinite;
+}
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+@keyframes fadeInSpring {
+  0% { opacity: 0; transform: translateY(20px) scale(0.95); }
+  70% { transform: translateY(-5px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeInSpring 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Staggered animation classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+
+/* Chat Bubble Tails */
+.clip-bubble-right {
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+.clip-bubble-left {
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}

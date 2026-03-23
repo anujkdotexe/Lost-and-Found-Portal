@@ -1,19 +1,20 @@
 # FindIt - Lost and Found Portal
 
-A cute and community-driven Lost and Found portal built with the MERN stack. Help reunite items with their owners through a simple, light-mode interface and real-time messaging.
+A cute and community-driven Lost and Found portal built with the **MEAN** stack (Angular, Node, Express, MongoDB). Help reunite items with their owners through a premium, glassmorphic interface and real-time messaging.
 
 ## Features
 
-- **Cute & Simple UI**: built with Tailwind CSS v4, featuring a "Sakura & Sky" pastel palette, rounded UI elements, and glassmorphism.
+- **Premium Angular UI**: Built with Angular 19+ featuring **Zoneless** change detection, HSL-pastel palettes, rounded UI elements, and glassmorphism.
 - **Community Board**: Browse lost/found items with category filters and search.
 - **Item Posting**: Multi-part form for uploading item details and photos (integrated with Cloudinary).
 - **Real-time Chat**: Bi-directional messaging powered by Socket.io for safe and quick coordination.
+- **State management**: Powered by Angular **Signals** for reactive and performant state handling.
 - **Secure Auth**: JWT-based user accounts with persistent sessions.
-- **Status Tracking**: Ability for owners to mark items as "Resolved" once claimed.
+- **Status Tracking**: Ability for owners to mark items as "Claimed" once resolved.
 
 ## Tech Stack
 
-- **Frontend**: React (Vite), Tailwind CSS v4, Lucide Icons
+- **Frontend**: Angular 19 (Vite), Vanilla CSS, Lucide Icons, Socket.io-client
 - **Backend**: Node.js, Express, Socket.io
 - **Database**: MongoDB (Mongoose)
 - **Image Storage**: Cloudinary API
@@ -31,7 +32,7 @@ A cute and community-driven Lost and Found portal built with the MERN stack. Hel
 1. **Clone the repository**:
    ```bash
    git clone <your-repo-url>
-   cd "MERN Project"
+   cd "Lost and Found Portal"
    ```
 
 2. **Backend Setup**:
@@ -48,15 +49,15 @@ A cute and community-driven Lost and Found portal built with the MERN stack. Hel
    CLOUDINARY_API_SECRET=your_secret
    ```
 
-3. **Frontend Setup**:
+3. **Frontend (Angular) Setup**:
    ```bash
    cd ../frontend
    npm install
    ```
 
 4. **Run the Application**:
-   - Start Backend: `cd backend && npm run start`
-   - Start Frontend: `cd frontend && npm run dev`
+   - Start Backend: `cd backend && npm run dev`
+   - Start Frontend: `cd frontend && npm start`
 
 ## Credits
 
