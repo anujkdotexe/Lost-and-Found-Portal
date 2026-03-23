@@ -35,8 +35,16 @@ export class ItemService {
     return firstValueFrom(this.http.get<LostItem[]>('/api/items/latest'));
   }
 
-  async getAllItems(): Promise<LostItem[]> {
-    return firstValueFrom(this.http.get<LostItem[]>('/api/items', { headers: this.getHeaders() }));
+  async getAllItems(filter?: string, search?: string): Promise<LostItem[]> {
+    let url = '/api/items';
+    const params: any = {};
+    if (filter && filter !== 'All') params.category = filter;
+    if (search) params.search = search;
+    
+    const queryParams = new URLSearchParams(params).toString();
+    if (queryParams) url += `?${queryParams}`;
+
+    return firstValueFrom(this.http.get<LostItem[]>(url, { headers: this.getHeaders() }));
   }
 
   async getItemById(id: string): Promise<LostItem> {
