@@ -1,8 +1,10 @@
 const express = require('express');
-const { createItem, getItems, getItemById, updateItemStatus, deleteItem } = require('../controllers/itemController');
+const { createItem, getItems, getLatestItems, getItemById, updateItemStatus, deleteItem } = require('../controllers/itemController');
 const { protect } = require('../middlewares/authMiddleware');
 const upload = require('../middlewares/uploadMiddleware');
 const router = express.Router();
+
+router.get('/latest', getLatestItems);
 
 router.route('/')
     .get(getItems)

@@ -1,5 +1,14 @@
 const Item = require('../models/Item');
 
+exports.getLatestItems = async (req, res) => {
+    try {
+        const items = await Item.find().populate('owner', 'name avatar').sort({ createdAt: -1 }).limit(3);
+        res.json(items);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
 exports.createItem = async (req, res) => {
     try {
         const { title, description, category, location, date } = req.body;
