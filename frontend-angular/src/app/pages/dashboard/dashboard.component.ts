@@ -10,10 +10,10 @@ import { ItemService, LostItem } from '../../services/item.service';
   standalone: true,
   imports: [CommonModule, FormsModule, ItemCardComponent, LucideAngularModule],
   template: `
-    <div class="animate-fade-in pb-20 pt-10 px-4 max-w-6xl mx-auto">
+    <div class="animate-fade-in pb-20 pt-32 px-4 max-w-6xl mx-auto">
       <!-- Header -->
       <div class="mb-12 text-center max-w-2xl mx-auto">
-        <div class="inline-flex items-center justify-center w-20 h-20 bg-[#ffeaf0] rounded-full mb-6 animate-float shadow-sm">
+        <div class="inline-flex items-center justify-center w-20 h-20 bg-[#ffeaf0] rounded-[2rem] mb-6 shadow-sm border border-[#ffd6e0]">
           <lucide-icon [name]="CompassIcon" [size]="36" color="#ff8fa3"></lucide-icon>
         </div>
         <h1 class="text-4xl md:text-5xl font-extrabold text-[#2b2d42] mb-4 tracking-tight">Community Board</h1>

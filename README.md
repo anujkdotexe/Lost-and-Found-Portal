@@ -1,6 +1,6 @@
 # FindIt - Lost and Found Portal
 
-A cute and community-driven Lost and Found portal built with the **MEAN** stack (Angular, Node, Express, MongoDB). Help reunite items with their owners through a premium, glassmorphic interface and real-time messaging.
+A cute and community-driven Lost and Found portal built with the MEAN (MongoDB, Express, Angular, Node.js) stack. Help reunite items with their owners through a simple, light-mode interface and real-time messaging.
 
 ## Features
 
@@ -14,7 +14,7 @@ A cute and community-driven Lost and Found portal built with the **MEAN** stack 
 
 ## Tech Stack
 
-- **Frontend**: Angular 19 (Vite), Vanilla CSS, Lucide Icons, Socket.io-client
+- **Frontend**: Angular, Tailwind CSS v4, Lucide Icons, Socket.io-client
 - **Backend**: Node.js, Express, Socket.io
 - **Database**: MongoDB (Mongoose)
 - **Image Storage**: Cloudinary API
@@ -51,13 +51,13 @@ A cute and community-driven Lost and Found portal built with the **MEAN** stack 
 
 3. **Frontend (Angular) Setup**:
    ```bash
-   cd ../frontend
+   cd ../frontend-angular
    npm install
    ```
 
 4. **Run the Application**:
-   - Start Backend: `cd backend && npm run dev`
-   - Start Frontend: `cd frontend && npm start`
+   - Start Backend: `cd backend && npm run start`
+   - Start Frontend: `cd frontend-angular && npm start`
 
 ## Credits
 
